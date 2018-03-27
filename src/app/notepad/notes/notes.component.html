@@ -1,3 +1,7 @@
-<p>
-  notes works!
-</p>
+<form novalidate [formGroup]="myNotes">
+  <div>
+    <input type="text" formControlName="noteTitle">
+    <textarea type="text" fromControlName="noteText"></textarea>
+    <button>Delete</button>
+  </div>
+</form>

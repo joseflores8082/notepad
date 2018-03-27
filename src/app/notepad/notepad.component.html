@@ -1,3 +1,13 @@
-<p>
-  notepad works!
-</p>
+<form novalidate [formGroup]="myGroup">
+  <div>
+    <label>Notepad Title</label>
+    <input type="text" formControlName="notePadTitle">
+  </div>
+  <div>
+    <h2>My Notes</h2>
+    <input type="text" formControlName="noteTitle">
+    <textarea type="text" fromControlName="noteText"></textarea>
+  </div>
+  <button>Add</button>
+</form>
+<app-notes></app-notes>
