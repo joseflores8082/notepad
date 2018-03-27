@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-notes',
@@ -14,7 +14,7 @@ export class NotesComponent implements OnInit {
 
   ngOnInit() {
     this.myNotes = new FormGroup({
-      noteTitle: new FormControl(''),
+      noteTitle: new FormControl('', [Validators.maxLength(255)]),
       noteText: new FormControl(''),
     });
   }

@@ -1,13 +1,26 @@
-<form novalidate [formGroup]="myGroup">
-  <div>
-    <label>Notepad Title</label>
-    <input type="text" formControlName="notePadTitle">
+<div class="row">
+  <div class="col-md-6">
+    <form class="form-group" novalidate [formGroup]="myNotes" (ngSubmit)="onSubmit(myNotes)">
+      <div>
+        <label>Notepad Title</label>
+        <input class="form-control form-margin" type="text" placeholder="My notepad title..." formControlName="notePadTitle">
+      </div>
+      <div>
+        <h2>My Notes</h2>
+        <input class="form-control form-margin" type="text" placeholder="Enter note title..." formControlName="noteTitle">
+        <textarea class="form-control form-margin" placeholder="Enter note..." fromControlName="noteText"></textarea>
+      </div>
+      <button type="button" class="btn btn-success" type="submit">Add</button>
+    </form>
   </div>
-  <div>
-    <h2>My Notes</h2>
-    <input type="text" formControlName="noteTitle">
-    <textarea type="text" fromControlName="noteText"></textarea>
+  <div class="col-md-6">
+    <div class="btns-wrap">
+      <button type="button" class="btn btn-primary">Save</button>
+      <button type="button" class="btn btn-danger">Delete</button>
+    </div>
   </div>
-  <button>Add</button>
-</form>
-<app-notes></app-notes>
+</div>
+
+<div *ngIf="app-notes">
+  <app-notes></app-notes>
+</div>

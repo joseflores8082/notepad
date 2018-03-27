@@ -1,7 +1,11 @@
-<form novalidate [formGroup]="myNotes">
-  <div>
-    <input type="text" formControlName="noteTitle">
-    <textarea type="text" fromControlName="noteText"></textarea>
-    <button>Delete</button>
+<form class="form-group" novalidate [formGroup]="myNotes">
+  <div class="row">
+    <div class="col-md-6">
+      <input class="form-control form-margin" type="text" formControlName="noteTitle">
+      <textarea class="form-control form-margin" type="text" fromControlName="noteText"></textarea>
+    </div>
+    <div class="col-md-3">
+      <button type="button" class="btn btn-danger">Delete</button>
+    </div>
   </div>
 </form>
